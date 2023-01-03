@@ -7,7 +7,7 @@ const initialstate: TodoReducerType = {
     loading: false,
     error: null,
     page: 1,
-    limit: 20,
+    limit: 10,
 }
 
 export const todoReducer = (state: TodoReducerType = initialstate, action: TodoActionsType): TodoReducerType => {
@@ -39,20 +39,22 @@ export const todoReducer = (state: TodoReducerType = initialstate, action: TodoA
     }
 }
 
-export const fetchTodoThunk = (page = 1, limit = 20) => {
+export const fetchTodoThunk = (page = 1, limit = 10) => {
     return async (dispatch: Dispatch<TodoActionsType>) => {
         try {
             dispatch({type: TodoActionConstType.FETCH_TODO})
             const response = await axios.get("https://jsonplaceholder.typicode.com/todos", {
-                params: {page: page, _limit: limit}
+                params: {_page: page, _limit: limit}
             })
-            dispatch({type: TodoActionConstType.FETCH_TODO_SUCCESS, payload: response.data})
+            setTimeout(() => {
+                dispatch({type: TodoActionConstType.FETCH_TODO_SUCCESS, payload: response.data})
+            }, 500)
         } catch (e) {
             dispatch({type: TodoActionConstType.FETCH_TODO_ERROR, payload: "Error todos"})
         }
     }
-}
+};
 
 export const setTodoPage = (page: number): TodoActionsType => {
     return {type: TodoActionConstType.SET_TODO_PAGE, payload: page}
-}
+};

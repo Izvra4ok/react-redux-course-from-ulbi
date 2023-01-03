@@ -6,11 +6,14 @@ import {fetchTodoThunk} from "../Redux/todoReducer";
 const TodoList: React.FC = () => {
 
     const {todos, loading, limit, page, error} = useTypedSelector(state => state.todo);
-    const {fetchTodoThunk} = useActionsDispatch();
+    const {fetchTodoThunk, setTodoPage} = useActionsDispatch();
+
+    const pages = [1, 2, 3, 4, 5,6,7,8,9,10]
 
     useEffect(() => {
-        fetchTodoThunk(1, 10)
-    }, [])
+        fetchTodoThunk(page, limit)
+    }, [page])
+
 
     if (loading) {
         return <h2>Loading</h2>
@@ -26,6 +29,17 @@ const TodoList: React.FC = () => {
                 <div style={{border: "1px solid black", padding: "10px", margin: "5px"}} key={todo.id}>
                     {todo.id}:{todo.title}
                 </div>)}
+
+            <div style={{display: "flex"}}>
+                {pages.map(p =>
+                    <div key={p}
+                         onClick={() => setTodoPage(p)}
+                         style={{border: p === page ? '2px solid green' : '1px solid gray', padding: 10,margin:"5px"}}
+                    >
+                        {p}
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

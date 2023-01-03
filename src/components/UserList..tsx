@@ -18,7 +18,7 @@ const UserList: React.FC<UserListType> = () => {
         userFetchThunk()
     }, [])
 
-    if (loading && !users) {
+    if (loading) {
         return <h2>Loading</h2>
     }
     if (error) {
@@ -33,11 +33,14 @@ const UserList: React.FC<UserListType> = () => {
                     <b>{user.username}:</b>
                     {user.name}
                     <div><b>Email: </b>{user.email}</div>
-                    {/*<address>*/}
-                    {/*    <b>Address: </b>{user.address.city}, {user.address.street}, {user.address.suite},*/}
-                    {/*    z/p:{user.address.zipcode}*/}
-                    {/*</address>*/}
-                    {/*<div><b>Company: </b>{user.company.name}, {user.company.bs}, {user.company.catchPhrase}</div>*/}
+                    {user.address ? <span>
+                            <address>
+                                <b>Address: </b>{user.address.city}, {user.address.street}, {user.address.suite},
+                                z/p:{user.address.zipcode}
+                            </address>
+                            <div><b>Company: </b>{user.company.name}, {user.company.bs}, {user.company.catchPhrase}</div>
+                        </span>
+                        : <h2>wait</h2>}
                     <div><b>Phone: </b>{user.phone}</div>
                     <div><b>Website: </b>{user.website}</div>
                 </div>
