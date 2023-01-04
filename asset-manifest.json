@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.31d6cfe0.css",
-    "main.js": "/static/js/main.dfe127cb.js",
-    "static/js/787.3b535551.chunk.js": "/static/js/787.3b535551.chunk.js",
-    "index.html": "/index.html",
-    "main.dfe127cb.js.map": "/static/js/main.dfe127cb.js.map",
-    "787.3b535551.chunk.js.map": "/static/js/787.3b535551.chunk.js.map"
+    "main.css": "/react-redux-ts-course-from-ulbi/static/css/main.31d6cfe0.css",
+    "main.js": "/react-redux-ts-course-from-ulbi/static/js/main.dd0f023e.js",
+    "static/js/787.3b535551.chunk.js": "/react-redux-ts-course-from-ulbi/static/js/787.3b535551.chunk.js",
+    "index.html": "/react-redux-ts-course-from-ulbi/index.html",
+    "main.dd0f023e.js.map": "/react-redux-ts-course-from-ulbi/static/js/main.dd0f023e.js.map",
+    "787.3b535551.chunk.js.map": "/react-redux-ts-course-from-ulbi/static/js/787.3b535551.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.dfe127cb.js"
+    "static/js/main.dd0f023e.js"
   ]
 }
