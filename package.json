@@ -1,6 +1,6 @@
 {
-  "name": "react-redux-ts-course-from-ulbi",
-  "homepage": "https://izvra4ok.github.io/react-redux-ts-course-from-ulbi",
+  "name": "todo-react-ts-redux",
+  "homepage": "https://izvra4ok.github.io/todo-react-ts-redux",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
